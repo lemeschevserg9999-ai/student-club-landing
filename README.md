@@ -3,8 +3,8 @@
 Адаптивный двухстраничный веб-сайт (главная страница-лендинг и страница «Расписание»), разработанный на чистом **HTML5 и CSS3** без использования JavaScript и сторонних библиотек. Командная разработка велась в реальном времени с помощью расширения **Visual Studio Live Share**.
 
 ## Ссылки на проект
-- **Репозиторий GitHub:** https://github.com
-- **Опубликованный сайт (GitHub Pages):** https://github.io
+- **Репозиторий GitHub:** https://github.com/lemeschevserg9999-ai/student-club-landing
+- **Опубликованный сайт (GitHub Pages):** https://lemeschevserg9999-ai.github.io/student-club-landing/
 
 ## Реализованный функционал
 - **Главная страница (`index.html`):** шапка с навигацией и переключателем темы, hero-блок, секция «О клубе», сетка из 6 карточек мероприятий, FAQ-аккордеон на `<details>/<summary>` и форма обратной связи с HTML5-валидацией (`required`, `type="email"`, `pattern`, `minlength`).
