@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Студенческий клуб «Вектор» — Главная</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <!-- Переключатель темы в самом начале body для работы селектора ~ -->
+  <input type="checkbox" id="theme-toggle" class="visually-hidden" aria-label="Переключить тёмную тему">
+
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo">Клуб «Вектор»</a>
+        <nav aria-label="Основная навигация">
+          <ul class="nav-list">
+            <li><a href="index.html" aria-current="page">Главная</a></li>
+            <li><a href="schedule.html">Расписание</a></li>
+            <li><a href="#join-form">Вступить</a></li>
+          </ul>
+        </nav>
+        <label for="theme-toggle" class="theme-btn" tabindex="0">
+          <span class="theme-text-dark">🌙 Тёмная</span>
+          <span class="theme-text-light">☀️ Светлая</span>
+        </label>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero-блок -->
+      <section class="hero">
+        <div class="container">
+          <h1>Развивайся, создавай, объединяйся</h1>
+          <p>Сообщество студентов для совместных IT-проектов, научных лекций и спортивных турниров.</p>
+          <a href="#join-form" class="btn btn-primary">Стать участником</a>
+        </div>
+      </section>
+
+      <!-- Секция «О клубе» -->
+      <section id="about" class="section container">
+        <h2>О клубе</h2>
+        <p>Мы объединяем студентов всех факультетов с 2022 года. Еженедельно проводим практикумы, хакатоны и открытые дискуссии.</p>
+      </section>
+
+      <!-- Карточки мероприятий (6 штук по ТЗ) -->
+      <!-- TODO: @44iki проверить адаптивную сетку карточек на 360px, 768px и 1440px -->
+      <section id="events" class="section container">
+        <h2>Ближайшие мероприятия</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <span class="badge">Воркшоп</span>
+            <h3>Основы Git и командной работы</h3>
+            <p>Разберём ветвление, pull request и работу в реальном времени.</p>
+            <a href="schedule.html#modal-1" class="btn btn-outline">Подробнее</a>
+          </article>
+
+          <article class="card">
+            <span class="badge">Лекция</span>
+            <h3>ИИ в современной науке</h3>
+            <p>Обзор нейросетевых моделей для анализа данных.</p>
+            <a href="schedule.html#modal-2" class="btn btn-outline">Подробнее</a>
+          </article>
+
+          <article class="card">
+            <span class="badge">Спорт</span>
+            <h3>Турнир по настольному теннису</h3>
+            <p>Межфакультетские соревнования в главном корпусе.</p>
+            <a href="schedule.html#modal-3" class="btn btn-outline">Подробнее</a>
+          </article>
+
+          <article class="card">
+            <span class="badge">Воркшоп</span>
+            <h3>Дизайн-системы в Figma</h3>
+            <p>Создаём компоненты и токены для веб-интерфейсов.</p>
+            <a href="schedule.html" class="btn btn-outline">В расписание</a>
+          </article>
+
+          <article class="card">
+            <span class="badge">Лекция</span>
+            <h3>Карьера в разработке</h3>
+            <p>Как составить резюме и пройти первое техническое интервью.</p>
+            <a href="schedule.html" class="btn btn-outline">В расписание</a>
+          </article>
+
+          <article class="card">
+            <span class="badge">Спорт</span>
+            <h3>Утренний забег кампуса</h3>
+            <p>Дистанция 5 км для участников любого уровня подготовки.</p>
+            <a href="schedule.html" class="btn btn-outline">В расписание</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- FAQ-аккордеон на <details>/<summary> -->
+      <section id="faq" class="section container">
+        <h2>Частые вопросы</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Кто может вступить в клуб?</summary>
+            <p>Любой студент очной или заочной формы обучения независимо от курса и специальности.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Участие в мероприятиях платное?</summary>
+            <p>Нет, все лекции, воркшопы и внутренние турниры полностью бесплатны.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Нужен ли опыт программирования?</summary>
+            <p>Для стартовых воркшопов опыт не требуется — мы обучаем с нуля.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Форма обратной связи с HTML-валидацией -->
+      <section id="join-form" class="section container">
+        <h2>Подать заявку в клуб</h2>
+        <form action="#join-form" class="contact-form">
+          <div class="form-group">
+            <label for="user-name">Имя и фамилия *</label>
+            <input type="text" id="user-name" name="name" required minlength="2" placeholder="Иван Иванов">
+            <span class="error-msg">Введите минимум 2 символа</span>
+          </div>
+
+          <div class="form-group">
+            <label for="user-email">Учебный Email *</label>
+            <input type="email" id="user-email" name="email" required placeholder="student@university.ru">
+            <span class="error-msg">Введите корректный email</span>
+          </div>
+
+          <div class="form-group">
+            <label for="user-group">Номер группы (формат: АБ-123) *</label>
+            <input type="text" id="user-group" name="group" required pattern="[А-Яа-яЁёA-Za-z]{2,4}-[0-9]{2,3}" placeholder="ИТ-201">
+            <span class="error-msg">Формат группы: 2–4 буквы, дефис и 2–3 цифры</span>
+          </div>
+
+          <div class="form-group">
+            <label for="user-msg">О себе и интересах</label>
+            <textarea id="user-msg" name="message" rows="3" minlength="10" placeholder="Расскажите, какие направления вам интересны"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Отправить заявку</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2026 Студенческий клуб «Вектор». Разработано в VS Live Share.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

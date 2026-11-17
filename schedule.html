@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Студенческий клуб «Вектор» — Расписание</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <input type="checkbox" id="theme-toggle" class="visually-hidden" aria-label="Переключить тёмную тему">
+
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo">Клуб «Вектор»</a>
+        <nav aria-label="Основная навигация">
+          <ul class="nav-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="schedule.html" aria-current="page">Расписание</a></li>
+            <li><a href="index.html#join-form">Вступить</a></li>
+          </ul>
+        </nav>
+        <label for="theme-toggle" class="theme-btn" tabindex="0">
+          <span class="theme-text-dark">🌙 Тёмная</span>
+          <span class="theme-text-light">☀️ Светлая</span>
+        </label>
+      </div>
+    </header>
+
+    <main class="container section">
+      <h1>Расписание мероприятий</h1>
+
+      <!-- Поиск-заглушка (без JS, оформлено стилями) -->
+      <div class="search-stub" role="search">
+        <label for="search-input" class="visually-hidden">Поиск по мероприятиям</label>
+        <input type="search" id="search-input" placeholder="Поиск по названию или спикеру (демо-режим)...">
+      </div>
+
+      <!-- Радиокнопки фильтрации -->
+      <!-- TODO: @44iki настроить подсветку активной кнопки фильтра в style.css -->
+      <div class="filter-system">
+        <input type="radio" name="category" id="cat-all" class="visually-hidden" checked>
+        <input type="radio" name="category" id="cat-lecture" class="visually-hidden">
+        <input type="radio" name="category" id="cat-workshop" class="visually-hidden">
+        <input type="radio" name="category" id="cat-sport" class="visually-hidden">
+
+        <div class="filter-controls" role="group" aria-label="Фильтр по категориям">
+          <label for="cat-all" class="filter-btn">Все</label>
+          <label for="cat-lecture" class="filter-btn">Лекции</label>
+          <label for="cat-workshop" class="filter-btn">Воркшопы</label>
+          <label for="cat-sport" class="filter-btn">Спорт</label>
+        </div>
+
+        <div class="cards-grid filter-grid">
+          <article class="card" data-cat="workshop">
+            <span class="badge">Воркшоп</span>
+            <h3>Основы Git и командной работы</h3>
+            <p>20 ноября, 17:00 • Ауд. 304</p>
+            <a href="#modal-1" class="btn btn-outline">Детали</a>
+          </article>
+
+          <article class="card" data-cat="lecture">
+            <span class="badge">Лекция</span>
+            <h3>ИИ в современной науке</h3>
+            <p>22 ноября, 18:30 • Актовый зал</p>
+            <a href="#modal-2" class="btn btn-outline">Детали</a>
+          </article>
+
+          <article class="card" data-cat="sport">
+            <span class="badge">Спорт</span>
+            <h3>Турнир по настольному теннису</h3>
+            <p>25 ноября, 16:00 • Спорткомплекс</p>
+            <a href="#modal-3" class="btn btn-outline">Детали</a>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <!-- Модальные окна на :target -->
+    <div id="modal-1" class="modal" role="dialog" aria-modal="true" aria-labelledby="m1-title">
+      <div class="modal-box">
+        <a href="#close" class="modal-close" aria-label="Закрыть окно">✕</a>
+        <h2 id="m1-title">Основы Git и командной работы</h2>
+        <p><strong>Дата и место:</strong> 20 ноября, 17:00, корпус Б, ауд. 304.</p>
+        <p><strong>Что взять с собой:</strong> ноутбук с установленным VS Code и Git.</p>
+        <a href="index.html#join-form" class="btn btn-primary">Записаться</a>
+      </div>
+    </div>
+
+    <div id="modal-2" class="modal" role="dialog" aria-modal="true" aria-labelledby="m2-title">
+      <div class="modal-box">
+        <a href="#close" class="modal-close" aria-label="Закрыть окно">✕</a>
+        <h2 id="m2-title">ИИ в современной науке</h2>
+        <p><strong>Дата и место:</strong> 22 ноября, 18:30, главный корпус, актовый зал.</p>
+        <p><strong>Спикер:</strong> канд. техн. наук А. Смирнов.</p>
+        <a href="index.html#join-form" class="btn btn-primary">Записаться</a>
+      </div>
+    </div>
+
+    <div id="modal-3" class="modal" role="dialog" aria-modal="true" aria-labelledby="m3-title">
+      <div class="modal-box">
+        <a href="#close" class="modal-close" aria-label="Закрыть окно">✕</a>
+        <h2 id="m3-title">Турнир по настольному теннису</h2>
+        <p><strong>Дата и место:</strong> 25 ноября, 16:00, спорткомплекс, зал №2.</p>
+        <p><strong>Формат:</strong> одиночный разряд, олимпийская система на выбывание.</p>
+        <a href="index.html#join-form" class="btn btn-primary">Записаться</a>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2026 Студенческий клуб «Вектор».</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
